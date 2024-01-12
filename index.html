@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html>
- 
+<html lang="en">
 <head>
-    <title>
-        First Web Page
-    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
 </head>
- 
 <body>
-    Hello World!
+    <h1>Welcome to My Website</h1>
+    <p>Click the button below to go to the Hello World page.</p>
+    <button onclick="goToHelloWorld()">Go to Hello World</button>
+
+    <script>
+        function goToHelloWorld() {
+            window.location.href = "hello.html";
+        }
+    </script>
 </body>
- 
 </html>
