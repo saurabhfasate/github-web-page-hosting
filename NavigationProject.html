@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu with Sections</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            padding: 14px 20px;
+            display: block;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .section {
+            padding: 100px 20px;
+            height: 100vh;
+        }
+        #section1 { background-color: #f4f4f4; }
+        #section2 { background-color: #e2e2e2; }
+        #section3 { background-color: #cccccc; }
+        #section4 { background-color: #aaaaaa; }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#section1">Section 1</a>
+        <a href="#section2">Section 2</a>
+        <a href="#section3">Section 3</a>
+        <a href="#section4">Section 4</a>
+    </div>
+
+    <div id="section1" class="section">
+        <h1>Section 1</h1>
+        <p>This is Section 1.</p>
+    </div>
+
+    <div id="section2" class="section">
+        <h1>Section 2</h1>
+        <p>This is Section 2.</p>
+    </div>
+
+    <div id="section3" class="section">
+        <h1>Section 3</h1>
+        <p>This is Section 3.</p>
+    </div>
+
+    <div id="section4" class="section">
+        <h1>Section 4</h1>
+        <p>This is Section 4.</p>
+    </div>
+
+</body>
+</html>
