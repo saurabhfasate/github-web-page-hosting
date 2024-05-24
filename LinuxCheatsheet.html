@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Cheatsheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+        }
+        h2 {
+            color: #2E8B57;
+        }
+        .section {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        pre {
+            background-color: #eee;
+            border-left: 5px solid #4CAF50;
+            color: #333;
+            overflow: auto;
+            padding: 10px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Linux Cheatsheet</h1>
+
+    <div class="section">
+        <h2>Basic Commands</h2>
+        <pre><code>
+ls                   # List files in the directory
+ls -a                # List all files including hidden files
+ls -l                # List files in long format
+cd /path/to/dir      # Change directory
+pwd                  # Print working directory
+mkdir dir            # Create a new directory
+rmdir dir            # Remove an empty directory
+rm file              # Remove a file
+rm -r dir            # Remove a directory and its contents recursively
+cp file1 file2       # Copy file1 to file2
+cp -r dir1 dir2      # Copy dir1 to dir2 recursively
+mv file1 file2       # Move/rename file1 to file2
+touch file           # Create an empty file or update the timestamp
+        </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>File Viewing and Editing</h2>
+        <pre><code>
+cat file             # View file contents
+less file            # View file contents one page at a time
+head file            # View the first 10 lines of a file
+head -n 20 file      # View the first 20 lines of a file
+tail file            # View the last 10 lines of a file
+tail -n 20 file      # View the last 20 lines of a file
+nano file            # Edit a file using nano editor
+vi file              # Edit a file using vi editor
+        </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>File Permissions</h2>
+        <pre><code>
+chmod 755 file       # Change file permissions to rwxr-xr-x
+chmod u+x file       # Add execute permission for the user
+chown user:group file # Change file owner and group
+        </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Process Management</h2>
+        <pre><code>
+ps                   # Display current processes
+ps aux               # Display all running processes
+top                  # Display real-time process information
+kill PID             # Kill process with given PID
+kill -9 PID          # Force kill process with given PID
+        </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Networking</h2>
+        <pre><code>
+ifconfig             # Display network configuration (older systems)
+ip addr show         # Display IP addresses (modern systems)
+ping hostname        # Ping a host to check connectivity
+netstat -tuln        # Display listening ports
+curl http://url      # Fetch a URL's content
+wget http://url      # Download a file from a URL
+        </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Disk Usage</h2>
+        <pre><code>
+df -h                # Display disk space usage in human-readable format
+du -sh dir           # Display disk usage of a directory
+        </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Package Management</h2>
+        <pre><code>
+# Debian/Ubuntu
+sudo apt update                    # Update package lists
+sudo apt upgrade                   # Upgrade all packages
+sudo apt install package           # Install a package
+sudo apt remove package            # Remove a package
+sudo apt autoremove                # Remove unused packages
+
+# Red Hat/CentOS
+sudo yum update                    # Update all packages
+sudo yum install package           # Install a package
+sudo yum remove package            # Remove a package
+sudo yum clean all                 # Clean up cached packages
+        </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>User Management</h2>
+        <pre><code>
+sudo adduser username                # Add a new user
+sudo passwd username                 # Change user password
+sudo deluser username                # Delete a user
+sudo usermod -aG group username      # Add user to a group
+        </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>System Information</h2>
+        <pre><code>
+uname -a                 # Display system information
+uname -r                 # Display kernel version
+lsb_release -a           # Display distribution-specific information
+free -h                  # Display memory usage in human-readable format
+df -h                    # Display disk usage in human-readable format
+        </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Searching and Finding Files</h2>
+        <pre><code>
+find /path -name filename             # Find files by name
+grep "pattern" file                   # Search for a pattern in a file
+grep -r "pattern" /path               # Search for a pattern recursively in directory
+        </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>File Compression and Archiving</h2>
+        <pre><code>
+tar -czvf archive.tar.gz dir          # Create a gzip compressed tar file
+tar -xzvf archive.tar.gz              # Extract a gzip compressed tar file
+zip archive.zip file1 file2           # Create a zip file
+unzip archive.zip                     # Extract a zip file
+        </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>System Monitoring</h2>
+        <pre><code>
+htop                                  # Interactive process viewer (alternative to top)
+iostat                                # CPU and I/O statistics
+vmstat                                # System performance and virtual memory statistics
+        </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Permissions and Ownership</h2>
+        <pre><code>
+chmod 644 file                        # Change permissions to rw-r--r--
+chown user file                       # Change owner of file
+chgrp group file                      # Change group of file
+        </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Crontab (Scheduling Tasks)</h2>
+        <pre><code>
+crontab -e                            # Edit crontab for current user
+crontab -l                            # List crontab entries for current user
+        </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>SSH (Secure Shell)</h2>
+        <pre><code>
+ssh user@host                         # Connect to host as user
+ssh -i /path/to/key user@host         # Connect using a specific SSH key
+scp file user@host:/path/to/dest      # Copy file to remote host using SCP
+        </code></pre>
+    </div>
+</body>
+</html>
